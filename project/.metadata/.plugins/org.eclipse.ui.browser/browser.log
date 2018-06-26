@@ -1,0 +1,9 @@
+
+5월 01, 2018 20:37:21.00 NEW SESSION
+5월 01, 2018 20:37:21.00 [10820:13396:0501/203721.007:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+5월 01, 2018 20:55:37.63 Unable to read VR Path Registry from C:\Users\Mirim\AppData\Local\openvr\openvrpaths.vrpath
+
+5월 03, 2018 18:41:23.33 NEW SESSION
+5월 03, 2018 18:41:23.33 [12988:7552:0503/184123.335:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+5월 03, 2018 21:06:46.58 Unable to read VR Path Registry from C:\Users\Mirim\AppData\Local\openvr\openvrpaths.vrpath
+5월 03, 2018 21:06:46.58 [12988:11652:0503/210646.580:ERROR:media_internals.cc(103)] Cannot get RenderProcessHost

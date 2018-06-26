@@ -1,0 +1,41 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+String idSession=(String) session.getAttribute("id");
+out.println(idSession+"님의 방문을 환영합니다(세션으로 로그인 유지).");
+
+
+String pwSession=(String) session.getAttribute("pw");
+out.println(pwSession+"님의 방문을 환영합니다(세션으로 비번 유지).");
+
+	if(!(idSession==null&&pwSession==null)){ //null이 아니면 -> 로그인 유지 %>
+		<jsp:forward page="loginOk.jsp"/>
+	<%}
+%>
+<form action="loginProc.jsp" method="post">
+	<table border="1">
+		<tr>
+			<td>ID</td>
+			<td><input type="text" name="id"></td>
+		</tr>
+		<tr>
+			<td>PW</td>
+			<td><input type="password" name="pw"></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<input type="submit" value="로그인">
+				<input type="reset" value="취소">
+			</td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

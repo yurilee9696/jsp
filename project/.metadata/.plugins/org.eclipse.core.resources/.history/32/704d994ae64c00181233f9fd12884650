@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<b>로그인 성공</b><br>
+<%
+String idSession=(String) session.getAttribute("id");
+String pwSession=(String) session.getAttribute("pw");
+
+%>
+	<form action="logout.jsp" method="post">
+		<input type="button" value="로그아웃">
+	</form>
+</body>
+</html>
+
+

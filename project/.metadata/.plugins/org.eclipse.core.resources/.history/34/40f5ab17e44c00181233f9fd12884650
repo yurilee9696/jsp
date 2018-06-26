@@ -1,0 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<b>로그인 성공</b><br>
+<%
+String idSession=(String) session.getAttribute("id");
+out.println(idSession+"님의 방문을 환영합니다(세션으로 로그인 유지).");
+
+
+String pwSession=(String) session.getAttribute("pw");
+out.println(pwSession+"님의 방문을 환영합니다(세션으로 비번 유지).");
+%>
+	<form action="loginForm.jsp" method="post">
+		<input type="submit" value="로그아웃">
+	</form>
+	<button value="로그아아아아윳" onclick="logOut()"><jsp:forward page="login.jsp"/></button>
+</body>
+</html>
+
+<script>
+function logOut() {//로그아웃하면 세션삭제
+  sessionStorage.removeItem('id');
+  sessionStorage.removeItem('pw');
+}
+</script>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 3 elements from project &apos;amasbin&apos;&#x0D;&#x0A;- Original project: &apos;amasbin&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     스타트랙_다크니스.txt&#x0D;&#x0A;     어바웃타임.txt&#x0D;&#x0A;     해리포터.txt" description="Delete elements" element1="WebContent/WEB-INF/movie/스타트랙_다크니스.txt" element2="WebContent/WEB-INF/movie/어바웃타임.txt" element3="WebContent/WEB-INF/movie/해리포터.txt" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="3" stamp="1525085302494" subPackages="false" version="1.0"/>
+</session>

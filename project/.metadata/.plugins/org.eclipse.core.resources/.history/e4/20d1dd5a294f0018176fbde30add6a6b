@@ -1,0 +1,134 @@
+<%@page import="java.io.FileReader"%>
+<%@page import="java.io.BufferedReader"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+String contentpage= request.getParameter("CONTENTPAGE");
+
+String idSession=(String) session.getAttribute("id"); //세션 가져오기
+String pwSession=(String) session.getAttribute("pw");
+
+if(idSession==null||pwSession==null){
+	out.print("<SCRIPT LANGUAGE='JavaScript'>");
+	out.print("alert('회원만 사용가능합니다!');");
+	out.print("location.href='login.jsp';");
+	out.print("</SCRIPT>");
+	%>
+	
+	
+<%}%>
+<%
+if(!(idSession==null||pwSession==null)){
+	int cnt=0;
+	out.println("/dddddd");
+	try{
+		 String couponPath=application.getRealPath("/WEB-INF/couponCount.txt");
+		out.println(couponPath);
+		FileReader fr = new FileReader(couponPath); //파일읽기객체생성
+         BufferedReader br = new BufferedReader(fr); //버퍼리더객체생성
+         String line = null;
+         while((line=br.readLine())!=null){ //라인단위 읽기
+			out.println("원래있던 값 : "+Integer.parseInt(line) + "<br>");
+     		//buyCount+=Integer.parseInt(line)+1;
+     		cnt=Integer.parseInt(line);%>
+     		
+     		<script>
+     			var couponCnt=<%=cnt%>;
+     			window.onload=function couponShow(){
+     				var cId="cp";
+     				var couponId = new Array(couponCnt.length);
+     				
+     				for(var i=1;i<=parseInt(couponCnt);i++){
+     					//cId+=i;
+     					//document.write(cId);
+         				couponId[i]=document.getElementById("cp"+i);
+         				//document.write(couponId);
+         					couponId[i].style.backgroundColor="red";
+         				//CId="cp";
+         				}
+     			}
+     			
+     			
+     		</script>
+     		
+         <%}
+		  out.print(cnt);
+	}catch(Exception e) { 
+	    System.out.println(e.toString()); //에러 발생시 메시지 출력
+	}
+
+%>
+<p>1회 방문 시 스탬프 1개 찍어 드려요.</p>
+<p>버블을 모아 빨대를 콕! 꽂으면 모든 음료 중 한 잔이 무료!</p>
+<p>(R) 사이즈 합산은 불가능하니 꼭 챙겨 다니세요!</p>
+<center>
+	<table border=1>
+		<tr>
+			<td id="cp1">1</td>
+			<td id="cp2">2</td>
+			<td id="cp3">3</td>
+			<td id="cp4">4</td>
+			<td id="cp5">5</td>
+		</tr>
+		<tr>
+			<td id="cp6">6</td>
+			<td id="cp7">7</td>
+			<td id="cp8">8</td>
+			<td id="cp9">9</td>
+			<td id="cp10">10</td>
+		</tr>
+		
+	</table>
+</center>
+<form method="post">
+	<input type="button" value="사용하기" onclick="useCoupon()"></input>
+</form>
+<script>
+function useCoupon(){
+		if(couponCnt>=10){
+			alert("쿠폰이 사용됩니다");
+			couponCnt=0;
+			
+			
+			
+			var filepath = "C:\jsp_study\project\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\amasbin\WEB-INF\couponCount.txt"; // 기록하고자 하는 경로. ex) C:\\Program Files\\logs
+
+			
+			var fWrite = fileObject.OpenTextFile(filepath, 8);
+			
+			var s="0";
+			fWrite.write(s);
+			fWrite.newLine();
+			fWrite.flush();
+			fWrite.close();
+
+			
+			
+			var fileObject = new ActiveXObject("Scripting.FileSystemObject");
+	
+				var fWrite = fileObject.CreateTextFile(fullpath,false);
+				fWrite.write(msg);
+				fWrite.close();
+
+		// 파일이 이미 생성되어 있으면 appending 모드로 파일 열고 기록
+
+						 
+		 
+		 
+		 
+		}
+		else {
+			alert("아직 쿠폰이 10개가 되지 않았습니다! 좀 더 모아보세요!");
+		}
+	} 
+</script>
+<%} %>
+</body>
+</html>
