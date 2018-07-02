@@ -14,17 +14,21 @@
 	}
 	body{
 		margin: 0px;
-		background-color: #EBFAF6;
 	}
 	#content{
-		background-color: #fff;
+		background-color: #EBEBEB;
 		padding: 10px;
 	}
 	#foot{
 		padding:15px;
-		color: gray;
+		color: #FFF;
 		font-size: 0.7em;
 		text-align: center;
+		background-color: #008156;
+		position: absolute;
+		bottom: 0px;
+		left: 0;
+		right: 0;
 	}
 </style>
 </head>
@@ -47,12 +51,10 @@
 			<jsp:include page="<%=contentpage%>"></jsp:include>
 		</td>
 	</tr>
-	<tr>
-		<td id="foot">
-			<jsp:include page="bottom.jsp" flush="false"/>
-		</td>
-	</tr>
 </table>
+<div id="foot">
+	<jsp:include page="bottom.jsp" flush="false"/>
+</div>
 
 </body>
 </html>

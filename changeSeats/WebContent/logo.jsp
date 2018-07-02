@@ -7,24 +7,36 @@
 <title>Insert title here</title>
 </head>
 <style>
+@import url('https://fonts.googleapis.com/css?family=Fugaz+One');
 	#logoDiv{
-		background-color: #EBFAF6;
 		text-align: center;
-		padding: 30px;
+		padding: 0.2rem;
+		color: #008156;
 	}
-	#logoImg{
-		width: 120px;
+	h1{
+		padding: 0px;
+		margin: 1rem;
+		font-family: 'Fugaz One', cursive;
+		line-height: 90%;
+		font-size: 3.7rem;
 	}
-	#logoText{
-		display: block;
-		width: 100px;
-		margin: 0 auto ;
-	}
+	a:link, a:visited {
+    color: gray;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a:hover,a:active {
+    color: #008156;
+}
+#login-link{
+	margin-bottom: 1rem;
+	text-align: center;
+}
 </style>
 <body>
 <div id="logoDiv">
-	<img src="image/logo.gif" id="logoImg">
-	<img src="image/logo2.gif" id="logoText">
+	<h1>Change<br>Seat</h1>
 </div>
 
 <%
@@ -34,7 +46,7 @@ String idSession=(String) session.getAttribute("id"); //세션 가져오기
 String pwSession=(String) session.getAttribute("pw");
 
 if(idSession==null||pwSession==null){%>
-<a href="login.jsp">관리자 로그인</a>
+<div id="login-link"><a href="login.jsp" >관리자 로그인</a></div>
 <%}else{ %>
 <form action="logout.jsp" method="post">
 		<input type="submit" value="로그아웃">

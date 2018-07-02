@@ -7,10 +7,9 @@
 <title>Insert title here</title>
 <style type="text/css">
 		table, tr, td{
-			border : 1px solid black;
 			text-align: center;
 		}
-		td{
+		#seat-table td{
 			width: 20px;
 			padding: 1rem;
 		}
@@ -113,7 +112,7 @@ else{
 		var y=afterStr[1]*2; //¸ðµÒ ¼ö
 		var num=0;
 		var studentCnt=0;
-		document.write("<table>");
+		document.write("<table id='seat-table'>");
 		for(i=0;i<x;i++)
 		{
 			
