@@ -12,6 +12,7 @@
 		text-align: center;
 		padding: 0.2rem;
 		color: #008156;
+		background-color: #fff;
 	}
 	h1{
 		padding: 0px;
@@ -33,13 +34,27 @@ a:hover,a:active {
 	margin-bottom: 1rem;
 	text-align: center;
 }
+
+#logout-btn{
+	background-color: #FFF;
+    border: none;
+    color: gray;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    margin: 4px 1rem;
+    cursor: pointer;
+    border-radius: 2rem;
+    margin: 0 auto;
+    width: 100%;
+    padding-bottom: 1rem;
+}
 </style>
 <body>
 <div id="logoDiv">
 	<h1>Change<br>Seat</h1>
-</div>
-
-<%
+	<%
 String contentpage= request.getParameter("CONTENTPAGE");
 
 String idSession=(String) session.getAttribute("id"); //세션 가져오기
@@ -49,8 +64,11 @@ if(idSession==null||pwSession==null){%>
 <div id="login-link"><a href="login.jsp" >관리자 로그인</a></div>
 <%}else{ %>
 <form action="logout.jsp" method="post">
-		<input type="submit" value="로그아웃">
+		<input type="submit" value="로그아웃" id="logout-btn">
 	</form>
 	<%} %>
+</div>
+
+
 </body>
 </html>

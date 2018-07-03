@@ -14,10 +14,13 @@
 	}
 	body{
 		margin: 0px;
+		background-color: #EBEBEB;
 	}
 	#content{
 		background-color: #EBEBEB;
 		padding: 10px;
+		height: 100%;
+		overflow: hidden;
 	}
 	#foot{
 		padding:15px;

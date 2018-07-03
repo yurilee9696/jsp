@@ -9,18 +9,46 @@
 		table, tr, td{
 			text-align: center;
 		}
-		#seat-table td{
+		#table-div{
+			background: #FFFFFF;
+			  width: 40rem;
+			  margin: 0 auto 100px;
+			  padding: 4rem;
+			  text-align: center;
+			  box-shadow: 0px 3px 11px #00000016;
+		}
+		
+		#seat-table{
+			margin: 0 auto;
+			  
+		}
+		#seat-table td div{
 			width: 20px;
 			padding: 1rem;
+			border: 1px solid #008156;
 		}
-		#cellMargin{
-			padding-left: 4rem;	
+		.cellMargin{
+			padding-left: 400px;	
 		}
+		#login-btn{
+	background-color: #008156; /* Green */
+    border: none;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 2rem;
+    margin-bottom: 1rem;
+}
 	</style>
 </head>
 <body>
 
-<button>자리바꾸기</button>
+<button  onclick="location.reload()" id="login-btn">자리바꾸기</button>
 
 
 <%@ page import="java.io.*" %>
@@ -43,7 +71,7 @@
       sText = sText + sLine;  
     }
 
-    out.println("전체단위 [" + sText + " ] ");
+    System.out.println("전체단위 [" + sText + " ] ");
 }catch(Exception e){
   e.printStackTrace();
 }
@@ -106,13 +134,12 @@ else{
 	//alert(a);
 	
 }
-
 		//alert(a);
 		var x=(realCount)/(afterStr[1]*2) //전체 학생 수-결원 / 모둠 수;
 		var y=afterStr[1]*2; //모둠 수
 		var num=0;
 		var studentCnt=0;
-		document.write("<table id='seat-table'>");
+		document.write("<div id='table-div'><table id='seat-table'>");
 		for(i=0;i<x;i++)
 		{
 			
@@ -120,16 +147,20 @@ else{
 			for(j=0;j<y;j++)
 			{
 				if(num<realCount){
-					if(j%2==0)
-						document.write("<td id='cellMargin'>"+"<div>"+a[studentCnt]+"</div>"+"</td>");
+					if(j==0)
+						document.write("<td>"+"<div>"+a[studentCnt]+"</div>"+"</td>");
+					else if(j%2==0)
+						document.write("<td style='padding-left:4rem'>"+"<div>"+a[studentCnt]+"</div>"+"</td>");
 					else
-						document.write("<td>"+a[studentCnt]+"</td>");
+						document.write("<td>"+"<div>"+a[studentCnt]+"</div>"+"</td>");
 					num++;
 					studentCnt++;
 				}
 				else{
-					if(j%2==0)
-						document.write("<td id='cellMargin'>"+"<div></div>"+"</td>");
+					if(j==0)
+						document.write("<td>"+"<div>"+a[studentCnt]+"</div>"+"</td>");
+					else if(j%2==0)
+						document.write("<td style='padding-left:4rem'>"+"</td>");
 					else
 						document.write("<td></td>");
 					num++;
@@ -139,7 +170,7 @@ else{
 			}
 			document.write("</tr>");
 		}
-document.write("</table>");
+document.write("</table></div>");
 		
 		
 		

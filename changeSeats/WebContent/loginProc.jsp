@@ -18,9 +18,9 @@
 
 
 <%
-	if(id.equals("choi")){
+	if(id.equals("admin")){
 		if(pw.equals("1234")){
-			session.setAttribute("id", "choi");
+			session.setAttribute("id", "admin");
 			session.setAttribute("pw", "1234");
 		%>
 			<jsp:forward page="adminIndex.jsp"/>
